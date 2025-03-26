@@ -1,36 +1,25 @@
-# Use an official Node.js image as the base
-FROM node:18-alpine AS build
-
+# Use an official Node.js image
+FROM node:18-alpine
 
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and yarn.lock and install dependencies
+# Copy package.json and yarn.lock first (for caching)
 COPY package.json yarn.lock ./
+
+# Install dependencies
 RUN yarn install
 
 # Copy the rest of the application
 COPY . .
 
-# Build the React app
-RUN yarn build
+# Expose port 3000 for development mode
+EXPOSE 5173
 
-# Debugging: Check if the dist directory exists
-RUN echo "Checking if dist directory exists..." && ls -la /app/dist || echo "Dist directory not found!"
+# Enable polling to detect file changes
+ENV CHOKIDAR_USEPOLLING=true
+ENV VITE_HMR_PORT=5173  
+# Ensure Hot Module Replacement (HMR) works
 
-# Debug: Check if the build directory exists
-RUN ls -la /app/dist
-
-# Use Nginx for serving the production build
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-
-# Copy the built files to Nginx's default directory
-COPY --from=build /app/dist .
-
-# Expose port 80
-EXPOSE 80
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
-
+# Start the React development server
+CMD ["yarn", "dev","--host"]
