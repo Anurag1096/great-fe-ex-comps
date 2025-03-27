@@ -1,0 +1,35 @@
+.container{
+    padding:1.5rem 1rem;
+    max-width:21.25rem;
+    background-color:var(--color-white);
+    font-family:noto-sans;
+    border: 1px solid;
+    border-radius:8px;
+    box-shadow: 1px 1px 0.5px var(--color-grey-700);
+
+}
+.name {
+    padding-top:1rem;
+    padding-bottom:1.5rem;
+    
+   
+}
+.name h4 {
+    margin:0 0 0.25rem 0;
+    padding:0;
+    font-size:1.25rem;
+    color:var(--color-black-900);
+}
+.name .title{
+    font-size:0.875rem;
+    color:var(--color-grey-700);
+}
+p{
+    margin:0;
+    padding:0;
+    font-size:1rem;
+    color:var(--color-grey-700);
+}
+.btn-container{
+    color:var(--color-grey-700);
+}
