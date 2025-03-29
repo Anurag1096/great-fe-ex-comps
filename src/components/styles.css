@@ -5,7 +5,7 @@
     font-family:noto-sans;
     border: 1px solid;
     border-radius:8px;
-    box-shadow: 1px 1px 0.5px var(--color-grey-700);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 
 }
 .name {
@@ -28,8 +28,34 @@ p{
     margin:0;
     padding:0;
     font-size:1rem;
+    line-height:24px;
     color:var(--color-grey-700);
 }
 .btn-container{
     color:var(--color-grey-700);
+    /* width:100%; */
+    margin-top:2rem;
+    margin-bottom:1.25rem;
+    box-shadown:none;
+}
+
+.btn-container button{
+    padding:12px 16px;
+    border-radius:4px;
+    font-size:1rem;
+    font-weight:400;
+    border:none;
+    cursor:pointer;
+    background-color:var(--color-indigo-700);
+    width:100%;
+}
+.icons-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.icon-wrapper{
+    margin-right:16px;
+    cursor:pointer;
 }
