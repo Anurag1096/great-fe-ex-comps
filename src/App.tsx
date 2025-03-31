@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Cards from './components/Cards'
 import './App.css'
+import TextInput from './components/TextInput'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,7 +33,16 @@ function App() {
       </p>
       <div>
 
-        <Cards/>
+        {/* <Cards/> */}
+        <TextInput  
+          name='my-input'
+          label="Text Input"
+          placeholder={''}
+          hintText={''}
+          password={false}
+          email={false} 
+          rightImageSrc={''} 
+          leftImageSrc={''}/>
       </div>
     </>
   )

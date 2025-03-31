@@ -1,0 +1,23 @@
+.input-container{
+    display:flex;
+    flex-direction:column;
+}
+.input-container label{
+    text-align:start;
+    cursor:pointer;
+}
+.inpurt-container span{
+    text-align:start !important;
+
+}
+.input-container .right-image{
+    position:absolute;
+    top:12px;
+    left:15px;
+}
+
+.input-container .left-image{
+    position:absolute;
+    top:12px;
+    right:10px;
+}
