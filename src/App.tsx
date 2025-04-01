@@ -29,7 +29,7 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click fff sdffff
+        Click fff sdf
       </p>
       <div>
 
@@ -37,12 +37,12 @@ function App() {
         <TextInput  
           name='my-input'
           label="Text Input"
-          placeholder={''}
-          hintText={''}
+          placeholder={'First Name'}
+          hintText={'This is required'}
           password={false}
-          email={false} 
-          rightImageSrc={''} 
-          leftImageSrc={''}/>
+          email={false}
+          rightImageSrc={''}
+          leftImageSrc={''} id={'TextInput'} required={true}/>
       </div>
     </>
   )

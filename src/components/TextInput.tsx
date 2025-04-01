@@ -3,12 +3,14 @@ import "./textInput.css";
 //
 
 type Props = {
+  id:string;
   name: string;
   label: string;
   placeholder: string;
   hintText: string;
   password: boolean;
   email: boolean;
+  required:boolean;
   rightImageSrc: string;
   leftImageSrc: string;
 };
@@ -23,19 +25,18 @@ function TextInput(props: Props) {
   const leftImage = props.leftImageSrc ? props.leftImageSrc : null;
   //function expression's
 
-  const focusClick = () => {
-    myRef.current.focus();
-  };
+  
 
   return (
     <div className="input-container">
-      <label onClick={focusClick}>
+      <label htmlFor="TextInput">
       {props.label ?? "Give Label"}
 
       </label>
       {/* Left side icon image */}
       {leftImage && (
         <img
+          
           className="left-image"
           src={props.leftImageSrc}
           width={16}
@@ -44,10 +45,15 @@ function TextInput(props: Props) {
         />
       )}
       <input
+       id={props.id}
         ref={myRef}
         type={newType}
         name={props.name}
         placeholder={props.placeholder ? props.placeholder : ""}
+        required={props.required}
+        aria-required={props.required}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${props.id}-error` : undefined}
       />
       {/* Right side icon image */}
           {rightImage && (
@@ -60,8 +66,8 @@ function TextInput(props: Props) {
         />
       )}
       
-
-      {error && <span className="error-message">{props.hintText}</span>}
+      {error && <p id={`${props.id}-error`} role="alert" style={{ color: "red" }}>{props.hintText}</p>}
+     
 
     </div>
   );
