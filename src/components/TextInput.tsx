@@ -48,6 +48,7 @@ function TextInput(props: Props) {
        id={props.id}
         ref={myRef}
         type={newType}
+        pattern="[A-Za-z]+"
         name={props.name}
         placeholder={props.placeholder ? props.placeholder : ""}
         required={props.required}

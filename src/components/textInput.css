@@ -21,3 +21,12 @@
     top:12px;
     right:10px;
 }
+.input-container input:focus{
+    border:1px solid blue;
+    outline: none;
+}
+/* need to read about this style of code */
+.input-container input:invalid:focus,
+.input-container input:invalid:focus-visible {
+    border: 1px solid red;
+}
